@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+cache-control: no-store
+content-type: image/png
+x-cpu-cores: 12
+x-cpu-ms: 21610
+x-cpu-percent: 8.2
+x-image-height: 128
+x-image-width: 128
+x-inference-ms: 18030
+x-mask-max: 255
+x-mask-mean: 48.49
+x-mask-min: 0
+x-processing-ms: 21907
+x-rss-after-mb: 1110.8
+x-rss-before-mb: 737.9
+Date: Mon, 12 Oct 2026 01:47:07 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+

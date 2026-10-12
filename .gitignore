@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+
+# Downloaded model (224 MB; fetch with pnpm run setup-model)
+models/*.onnx
+
+# Local environment files
+.env
+.env.*
+!.env.example
+

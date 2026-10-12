@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+cache-control: no-store
+content-type: image/png
+x-image-height: 800
+x-image-width: 1280
+Date: Sat, 10 Oct 2026 10:32:44 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
