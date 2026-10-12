@@ -1,10 +1,9 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  experimental: {
-    serverActions: {
-      bodySizeLimit: '12mb',
-    },
+  serverExternalPackages: ['onnxruntime-node', 'sharp'],
+  outputFileTracingIncludes: {
+    '/api/remove-background': ['./models/*.onnx'],
   },
 }
 

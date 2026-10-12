@@ -1,0 +1,8 @@
+.git/
+.next/
+node_modules/
+models/
+*.tsbuildinfo
+*.png
+*.jpg
+*-headers.txt

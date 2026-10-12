@@ -2,9 +2,12 @@
   "name": "birefnet-cutout-demo",
   "private": true,
   "version": "0.1.0",
+  "packageManager": "pnpm@10.27.0",
+  "engines": { "node": "22.x" },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "vercel-build": "pnpm run setup-model && next build",
     "start": "next start",
     "lint": "next lint",
     "setup-model": "node scripts/setup-model.mjs"

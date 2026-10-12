@@ -3,6 +3,7 @@ node_modules/
 out/
 dist/
 *.tsbuildinfo
+.vercel/
 
 # Downloaded model (224 MB; fetch with pnpm run setup-model)
 models/*.onnx
@@ -12,3 +13,5 @@ models/*.onnx
 .env.*
 !.env.example
 
+
+.vercel

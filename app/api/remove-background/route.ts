@@ -6,6 +6,7 @@ import path from 'node:path'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
+export const maxDuration = 300
 
 const MODEL_SIZE = 1024
 const modelPath = path.join(process.cwd(), 'models', 'BiRefNet-general-bb_swin_v1_tiny-epoch_232.onnx')
@@ -19,6 +20,9 @@ function getSession() {
     intraOpNumThreads: 1,
     interOpNumThreads: 1,
     enableCpuMemArena: false,
+  }).catch((error: unknown) => {
+    sessionPromise = undefined
+    throw error
   })
   return sessionPromise
 }
@@ -36,7 +40,7 @@ export async function POST(request: Request) {
     const uploaded = form.get('image')
     if (!(uploaded instanceof File)) return NextResponse.json({ error: '请先选择图片。' }, { status: 400 })
     if (!uploaded.type.startsWith('image/')) return NextResponse.json({ error: '只支持图片文件。' }, { status: 415 })
-    if (uploaded.size > 10 * 1024 * 1024) return NextResponse.json({ error: '图片不能超过 10MB。' }, { status: 413 })
+    if (uploaded.size > 4 * 1024 * 1024) return NextResponse.json({ error: '图片不能超过 4MB。' }, { status: 413 })
 
     const input = Buffer.from(await uploaded.arrayBuffer())
     const decoded = await sharp(input).rotate().ensureAlpha().raw().toBuffer({ resolveWithObject: true })

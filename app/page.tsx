@@ -23,8 +23,8 @@ export default function Home() {
       setError('请选择 PNG、JPEG 或 WebP 图片。')
       return
     }
-    if (nextFile.size > 10 * 1024 * 1024) {
-      setError('图片不能超过 10MB。')
+    if (nextFile.size > 4 * 1024 * 1024) {
+      setError('图片不能超过 4MB。')
       return
     }
     setError('')
@@ -116,7 +116,7 @@ export default function Home() {
           </div>
           <button className="process-button" type="button" disabled={!file || busy} onClick={process}>{busy ? <><LoaderCircle className="spin" size={18} /> 正在推理边缘...</> : <><WandSparkles size={18} /> {parametersDirty || result ? '应用参数并重新处理' : '去除背景'}</>}</button>
           {error && <p className="error" role="alert">{error}</p>}
-          <p className="privacy"><span className="status-dot" /> 本地 ONNX 推理 · 图片不会离开你的电脑</p>
+          <p className="privacy"><span className="status-dot" /> ONNX 云端推理 · 请求完成后不保存图片</p>
         </div>
 
         <div className="result-column">
